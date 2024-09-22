@@ -44,5 +44,10 @@ def perfil(username):
     data=scraping_instagram(username=username)
     return render_template('perfil/instagram.html',data=data)
 
+@app.route('/teste',methods=['GET'])
+def teste():
+    data=scraping_instagram(username='robertogomes.jr')
+    return render_template('perfil/instagram.html',data=data)
+
 if __name__=="__main__":
     app.run()
