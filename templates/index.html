@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<div class="app">
+    <input type="text" id="username" placeholder="Digite seu @" autocomplete="off">
+    <iframe src="perfil/robertogomes.jr" frameborder="0" id="iframe-instagram"></iframe>
+    <div class="sobre">
+        <span class="title-sobre">Sobre o projeto</span>
+        <p></p>
+        
+        <ul>
+            <li>
+                <a href="https://github.com/jr-roberto" target="_blank">
+                    <img src="https://avatars.githubusercontent.com/u/91014834?v=4?s=400" alt="pic-github">
+                    <span>Github</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/jr-roberto/" target="_blank">
+                    <img src="https://media.licdn.com/dms/image/v2/D4D03AQFPjfmY46wu7Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1686017282245?e=2147483647&v=beta&t=Q_poegd9XtYOmk4kkBUWp4VcQt5r0oT0xY5XeqFjt5k" alt="pic-github">
+                    <span>Linkedin</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+    <span hidden id="text-digitacao"></span>
+</div>
+<script src="{{ url_for('static', filename='js/main.js') }}" id="codigo-fonte"></script>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<div class="app-instagram">
+
+    {% if data %}
+        {% if data['img'] %}
+        <img src="{{ data['img'] }}" alt="Imagem perfil" draggable="false">
+        {% else %}
+        <img src="{{ url_for('static', filename='img/perfil-de-usuario.png') }}" alt="Imagem perfil" draggable="false">
+        {% endif %}
+        <span class="title">{{ data['title'] }}</span>
+        <span class="descricao">{{ data['descricao'] }}</span>
+    {% else %}
+        <img src="{{ url_for('static', filename='img/perfil-de-usuario.png') }}" alt="Imagem perfil" draggable="false">
+        <span class="title">Perfil nao localizado</span>
+        <span class="descricao">---</span>
+    {% endif %}
+
+</div>
+{% endblock %}
