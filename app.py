@@ -4,7 +4,12 @@ from flask import Flask, render_template
 
 def scraping_instagram(username:str):
     url='https://www.instagram.com/{username}/'.format(username=username)
-    req = requests.get(url=url)
+
+    headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+    }
+    
+    req = requests.get(url=url, headers=headers)
 
     if req.status_code == 200:
         soup = BeautifulSoup(req.text,'html.parser')
@@ -25,7 +30,7 @@ def scraping_instagram(username:str):
             except:
                 pass
 
-        return req.text
+        return result
 
     return req.status_code
 
