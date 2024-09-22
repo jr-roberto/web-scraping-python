@@ -31,7 +31,7 @@ def scraping_instagram(username:str):
                 result.append(i.attrs)
                 pass
 
-        return req.text
+        return result
 
     return req.status_code
 
