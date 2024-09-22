@@ -25,7 +25,7 @@ def scraping_instagram(username:str):
             except:
                 pass
 
-        return result
+        return req.text
 
     return req.status_code
 
