@@ -15,7 +15,7 @@ def scraping_instagram(username:str):
         soup = BeautifulSoup(req.text,'html.parser')
         meta_tag=soup.find_all('meta')
 
-        result={}
+        result=[]
         for i in meta_tag:
             try:
                 if i.attrs['property'] == 'og:image':
@@ -28,6 +28,7 @@ def scraping_instagram(username:str):
                     result.update({'descricao':i.attrs['content']})
 
             except:
+                result.append(i.attrs)
                 pass
 
         return req.text
