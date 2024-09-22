@@ -27,7 +27,7 @@ def scraping_instagram(username:str):
 
         return result
 
-    return None
+    return req.status_code
 
 app = Flask(__name__)
 
